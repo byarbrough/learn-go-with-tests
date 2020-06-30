@@ -1,7 +1,7 @@
 package slices
 
 // Sum returns the sum of all numbers in slice
-func Sum(numbers [5]int) int {
+func Sum(numbers []int) int {
 
 	sum := 0
 
