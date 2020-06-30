@@ -14,12 +14,9 @@ func Sum(numbers []int) int {
 
 // SumAll returns sums of multiple slices
 func SumAll(numsToSum ...[]int) []int {
-
-	lenNumsToSum := len(numsToSum)
-	sums := make([]int, lenNumsToSum)
-
-	for i, nums := range numsToSum {
-		sums[i] = Sum(nums)
+	var sums []int
+	for _, nums := range numsToSum {
+		sums = append(sums, Sum(nums))
 	}
 
 	return sums
