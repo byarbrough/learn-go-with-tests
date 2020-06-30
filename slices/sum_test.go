@@ -33,3 +33,25 @@ func BenchmarkSumAll(b *testing.B) {
 		SumAll([]int{1, 2}, []int{0, 9})
 	}
 }
+
+func TestSumAllTails(t *testing.T) {
+
+	t.Run("test sum of tails", func(t *testing.T) {
+		got := SumAllTails([]int{1, 2}, []int{5, 9, 2})
+		want := []int{2, 11}
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("got %v want %v", got, want)
+		}
+	})
+
+	t.Run("test empty slice", func(t *testing.T) {
+		got := SumAllTails([]int{}, []int{0, 11, 99})
+		want := []int{0, 110}
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("got %v want %v", got, want)
+		}
+	})
+
+}
